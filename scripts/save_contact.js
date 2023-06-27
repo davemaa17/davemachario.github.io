@@ -1,25 +1,24 @@
-function downloadVCard() {
-  const vcardData = `
-    BEGIN:VCARD
-    VERSION:3.0
-    FN:Dave Machario
-    EMAIL:davemachario@gmail.com
-    TEL;TYPE=CELL:(+852) 9345-7707
-    ORG:SEKO Logistics, Island Productions
-    TITLE:Data Analyst, Freelance Audio Editor
-    URL:https://www.linkedin.com/in/davemachario/
-    URL:https://www.instagram.com/islandproductions.id
-    URL:https://www.youtube.com/channel/UCInemueXqh0N622jrIGtmVQ
-    END:VCARD
-  `;
+function saveContact() {
+  var contact = {
+    displayName: "Dave Machario",
+    phoneNumbers: [{ type: "mobile", value: "+85293457707" }],
+    emails: [
+      { type: "work", value: "dave.machario@sekologistics.com" },
+      { type: "home", value: "davemachario@gmail.com" }
+    ]
+  };
 
-  const blob = new Blob([vcardData], { type: 'text/vcard' });
-  const url = URL.createObjectURL(blob);
+  if (typeof navigator.contacts !== "undefined" && typeof navigator.contacts.save === "function") {
+    navigator.contacts.save(contact, onSaveSuccess, onSaveError);
+  } else {
+    alert("Contact save functionality is not supported on this device.");
+  }
+}
 
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'contact.vcf';
-  link.click();
+function onSaveSuccess(contact) {
+  alert("Contact saved successfully!");
+}
 
-  URL.revokeObjectURL(url);
+function onSaveError(error) {
+  alert("Contact save failed: " + error);
 }
