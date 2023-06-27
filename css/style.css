@@ -73,17 +73,27 @@ footer {
   font-size: 14px;
 }
 
-.save-profile-button {
+.save-contact-button {
   display: inline-block;
-  background-color: #2A292B;
-  color: #FFFFFF;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px;
+  background-color: #337ab7;
+  color: white;
   border-radius: 5px;
-  cursor: pointer;
   text-decoration: none;
 }
+
+.save-contact-button:hover {
+  background-color: #23527c;
+}
+
+.save-contact-text {
+  margin-right: 5px;
+}
+
+.save-contact-icon {
+  vertical-align: middle;
+}
+
 
 .social-icons {
   text-align: center;
