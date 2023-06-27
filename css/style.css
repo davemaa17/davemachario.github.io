@@ -1,0 +1,97 @@
+body {
+  background-color: #F7F7F7;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #2A292B;
+}
+
+h2 {
+  font-size: 24px;
+  color: #2A292B;
+}
+
+h3 {
+  font-size: 18px;
+  color: #2A292B;
+}
+
+main {
+  padding: 20px;
+}
+
+.container {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+section h2 {
+  font-size: 28px;
+  color: #2A292B;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+button {
+  background-color: #2A292B;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  background-color: #F7F7F7;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.save-profile-button {
+  display: inline-block;
+  background-color: #2A292B;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
