@@ -1,24 +1,18 @@
 function saveContact() {
-  var contact = {
-    displayName: "Dave Machario",
-    phoneNumbers: [{ type: "mobile", value: "+85293457707" }],
-    emails: [
-      { type: "work", value: "dave.machario@sekologistics.com" },
-      { type: "home", value: "davemachario@gmail.com" }
-    ]
-  };
+  var vcardData = "BEGIN:VCARD\n" +
+    "VERSION:3.0\n" +
+    "N:Machario;Dave\n" +
+    "FN:Dave Machario\n" +
+    "ORG:SEKO Logistics\n" +
+    "TITLE:Data Analyst, Music Producer\n" +
+    "TEL;TYPE=CELL:(+852) 9345-7707\n" +
+    "EMAIL:davemachario@gmail.com\n" +
+    "EMAIL;TYPE=WORK:dave.machario@sekologistics.com\n" +
+    "END:VCARD";
 
-  if (typeof navigator.contacts !== "undefined" && typeof navigator.contacts.save === "function") {
-    navigator.contacts.save(contact, onSaveSuccess, onSaveError);
-  } else {
-    alert("Contact save functionality is not supported on this device.");
-  }
-}
-
-function onSaveSuccess(contact) {
-  alert("Contact saved successfully!");
-}
-
-function onSaveError(error) {
-  alert("Contact save failed: " + error);
+  var encodedData = encodeURIComponent(vcardData);
+  var downloadLink = document.createElement("a");
+  downloadLink.setAttribute("href", "data:text/vcard;charset=utf-8," + encodedData);
+  downloadLink.setAttribute("download", "Dave_Machario.vcf");
+  downloadLink.click();
 }
