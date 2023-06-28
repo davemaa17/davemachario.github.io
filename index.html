@@ -5,9 +5,53 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="scripts/save_contact.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Function to fetch the latest video from a YouTube channel
+      function fetchLatestVideo(channelId, apiKey) {
+        $.ajax({
+          url: 'https://www.googleapis.com/youtube/v3/search',
+          type: 'GET',
+          dataType: 'json',
+          data: {
+            part: 'snippet',
+            channelId: channelId,
+            maxResults: 1,
+            order: 'date',
+            key: apiKey
+          },
+          success: function(data) {
+            if (data.items && data.items.length > 0) {
+              var videoId = data.items[0].id.videoId;
+              var videoTitle = data.items[0].snippet.title;
+              var videoEmbedUrl = 'https://www.youtube.com/embed/' + videoId;
+
+              // Update the video iframe with the latest video
+              $('#latest-video').attr('src', videoEmbedUrl);
+
+              // Update the header with the latest video title
+              $('#video-title').text(videoTitle);
+            }
+          },
+          error: function(xhr, status, error) {
+            console.log('Error fetching YouTube video:', error);
+          }
+        });
+      }
+
+      // Call the fetchLatestVideo function with your YouTube channel ID and API key
+      var channelId = 'UCInemueXqh0N622jrIGtmVQ';
+      var apiKey = 'AIzaSyCUohaw5viJIPJV9tmGrDgmsEHvKj9OClI';
+      fetchLatestVideo(channelId, apiKey);
+    });
+  </script>
 </head>
 <body>
   <header>
+    <div class="profile-image">
+      <img src="https://media.licdn.com/dms/image/D5603AQGrQUjgUb5NOQ/profile-displayphoto-shrink_800_800/0/1665830566337?e=1693440000&v=beta&t=NJGLa8hIN0l8EWe5gW_Ci7iR6vFbpIe4KF_4Gi1V57I" alt="Profile Picture">
+    </div>
     <h1>Dave Machario</h1>
     <h2>Data Analyst, Music Producer</h2>
     <h3>SEKO Logistics, Island Productions</h3>
@@ -15,7 +59,9 @@
       <a href="https://www.linkedin.com/in/davemachario/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
       <a href="https://www.instagram.com/islandproductions.id" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
       <a href="https://www.youtube.com/channel/UCInemueXqh0N622jrIGtmVQ" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="https://wa.me/85293457707" target="_blank" class="social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
     </div>
+    
   </header>
 
   <main>
@@ -33,15 +79,15 @@
         <h2>Projects</h2>
         <ul>
           <li>
-            <h3>Island Productions - Just The Two of Us</h3>
+            <h3 id="video-title">Loading latest video...</h3>
             <div class="video-wrapper">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/F3AekBQU18E" frameborder="0" allowfullscreen></iframe>
+              <iframe id="latest-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
             </div>
           </li>
           <li>
-            <h3>Island Productions - Cupid by Fiftyfifty</h3>
+            <h3>Island Productions - Just The Two of Us</h3>
             <div class="video-wrapper">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/a6CkyitvVDM" frameborder="0" allowfullscreen></iframe>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/F3AekBQU18E" frameborder="0" allowfullscreen></iframe>
             </div>
           </li>
         </ul>
@@ -53,19 +99,22 @@
   <div class="contact-container">
     <div class="container">
       <section id="contact">
-        <h2>Contact Me</h2>
+        <div class="contact-header">
+          <h2>Contact Me</h2>
+          <a href="#" onclick="saveContact()" class="add-contact-button">
+            <i class="fas fa-user-plus"></i>
+          </a>
+        </div>
         <p>
           Email: <a href="mailto:davemachario@gmail.com">davemachario@gmail.com</a><br>
           Company Email: <a href="mailto:dave.machario@sekologistics.com">dave.machario@sekologistics.com</a><br>
           Phone: <a href="tel:+85293457707">(+852) 9345-7707</a>
         </p>
-        <a href="#" onclick="saveContact()" class="save-contact-button">
-          <span class="save-contact-text">Save My Profile</span>
-          <i class="fas fa-address-card save-contact-icon"></i>
-        </a>                       
       </section>
     </div>
   </div>
+  
+  
 
   <footer>
     <p>&copy; 2023 Dave Machario. All rights reserved.</p>
