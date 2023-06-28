@@ -8,8 +8,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
-      // Function to fetch the latest video from a YouTube channel
-      function fetchLatestVideo(channelId, apiKey) {
+      // Function to fetch the latest video and most viewed video from a YouTube channel
+      function fetchVideos(channelId, apiKey) {
         $.ajax({
           url: 'https://www.googleapis.com/youtube/v3/search',
           type: 'GET',
@@ -17,33 +17,46 @@
           data: {
             part: 'snippet',
             channelId: channelId,
-            maxResults: 1,
-            order: 'date',
+            maxResults: 2,
+            order: 'viewCount',
             key: apiKey
           },
           success: function(data) {
             if (data.items && data.items.length > 0) {
-              var videoId = data.items[0].id.videoId;
-              var videoTitle = data.items[0].snippet.title;
-              var videoEmbedUrl = 'https://www.youtube.com/embed/' + videoId;
+              var latestVideoId = data.items[0].id.videoId;
+              var latestVideoTitle = data.items[0].snippet.title;
+              var latestVideoEmbedUrl = 'https://www.youtube.com/embed/' + latestVideoId;
 
-              // Update the video iframe with the latest video
-              $('#latest-video').attr('src', videoEmbedUrl);
+              var mostViewedVideoId = data.items[1].id.videoId;
+              var mostViewedVideoTitle = data.items[1].snippet.title;
+              var mostViewedVideoEmbedUrl = 'https://www.youtube.com/embed/' + mostViewedVideoId;
 
-              // Update the header with the latest video title
-              $('#video-title').text(videoTitle);
+              // Update the latest video iframe and title
+              $('#latest-video').attr('src', latestVideoEmbedUrl);
+              $('#latest-video-title').text(latestVideoTitle);
+
+              // Create the most viewed video element and update its iframe and title
+              var mostViewedVideoElement = `
+                <li>
+                  <h3>${mostViewedVideoTitle}</h3>
+                  <div class="video-wrapper">
+                    <iframe width="560" height="315" src="${mostViewedVideoEmbedUrl}" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </li>
+              `;
+              $('#videos-list').append(mostViewedVideoElement);
             }
           },
           error: function(xhr, status, error) {
-            console.log('Error fetching YouTube video:', error);
+            console.log('Error fetching YouTube videos:', error);
           }
         });
       }
 
-      // Call the fetchLatestVideo function with your YouTube channel ID and API key
+      // Call the fetchVideos function with your YouTube channel ID and API key
       var channelId = 'UCInemueXqh0N622jrIGtmVQ';
       var apiKey = 'AIzaSyCUohaw5viJIPJV9tmGrDgmsEHvKj9OClI';
-      fetchLatestVideo(channelId, apiKey);
+      fetchVideos(channelId, apiKey);
     });
   </script>
 </head>
@@ -77,17 +90,11 @@
     <div class="container">
       <section id="projects">
         <h2>Projects</h2>
-        <ul>
+        <ul id="videos-list">
           <li>
-            <h3 id="video-title">Loading latest video...</h3>
+            <h3 id="latest-video-title">Loading latest video...</h3>
             <div class="video-wrapper">
               <iframe id="latest-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </li>
-          <li>
-            <h3>Island Productions - Just The Two of Us</h3>
-            <div class="video-wrapper">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/F3AekBQU18E" frameborder="0" allowfullscreen></iframe>
             </div>
           </li>
         </ul>
