@@ -4,61 +4,9 @@
   <title>Dave Machario - Portfolio</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="scripts/save_contact.js"></script>
+  <script src="js/save_contact.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Function to fetch the latest video and most viewed video from a YouTube channel
-      function fetchVideos(channelId, apiKey) {
-        $.ajax({
-          url: 'https://www.googleapis.com/youtube/v3/search',
-          type: 'GET',
-          dataType: 'json',
-          data: {
-            part: 'snippet',
-            channelId: channelId,
-            maxResults: 2,
-            order: 'viewCount',
-            key: apiKey
-          },
-          success: function(data) {
-            if (data.items && data.items.length > 0) {
-              var latestVideoId = data.items[0].id.videoId;
-              var latestVideoTitle = data.items[0].snippet.title;
-              var latestVideoEmbedUrl = 'https://www.youtube.com/embed/' + latestVideoId;
-
-              var mostViewedVideoId = data.items[1].id.videoId;
-              var mostViewedVideoTitle = data.items[1].snippet.title;
-              var mostViewedVideoEmbedUrl = 'https://www.youtube.com/embed/' + mostViewedVideoId;
-
-              // Update the latest video iframe and title
-              $('#latest-video').attr('src', latestVideoEmbedUrl);
-              $('#latest-video-title').text(latestVideoTitle);
-
-              // Create the most viewed video element and update its iframe and title
-              var mostViewedVideoElement = `
-                <li>
-                  <h3>${mostViewedVideoTitle}</h3>
-                  <div class="video-wrapper">
-                    <iframe width="560" height="315" src="${mostViewedVideoEmbedUrl}" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </li>
-              `;
-              $('#videos-list').append(mostViewedVideoElement);
-            }
-          },
-          error: function(xhr, status, error) {
-            console.log('Error fetching YouTube videos:', error);
-          }
-        });
-      }
-
-      // Call the fetchVideos function with your YouTube channel ID and API key
-      var channelId = 'UCInemueXqh0N622jrIGtmVQ';
-      var apiKey = 'AIzaSyCUohaw5viJIPJV9tmGrDgmsEHvKj9OClI';
-      fetchVideos(channelId, apiKey);
-    });
-  </script>
+  <script src="js/main.js"></script>
 </head>
 <body>
   <header>
@@ -74,7 +22,6 @@
       <a href="https://www.youtube.com/channel/UCInemueXqh0N622jrIGtmVQ" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
       <a href="https://wa.me/85293457707" target="_blank" class="social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
     </div>
-    
   </header>
 
   <main>
@@ -90,17 +37,22 @@
     <div class="container">
       <section id="projects">
         <h2>Projects</h2>
-        <ul id="videos-list">
+        <ul>
           <li>
-            <h3 id="latest-video-title">Loading latest video...</h3>
+            <h3 id="video-title">Loading latest video...</h3>
             <div class="video-wrapper">
               <iframe id="latest-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </li>
+          <li>
+            <h3 id="most-viewed-video-title">Loading most viewed video...</h3>
+            <div class="video-wrapper">
+              <iframe id="most-viewed-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
             </div>
           </li>
         </ul>
       </section>
     </div>
-    
   </main>
 
   <div class="contact-container">
@@ -108,8 +60,8 @@
       <section id="contact">
         <div class="contact-header">
           <h2>Contact Me</h2>
-          <a href="#" onclick="saveContact()" class="add-contact-button">
-            <i class="fas fa-user-plus"></i>
+          <a href="data:text/vcard;charset=utf-8,%EF%BB%BFBEGIN%3AVCARD%0AVERSION%3A4.0%0AN%3AMachario%3BDave%0AFN%3ADave%20Machario%0AORG%3ASEKO%20Logistics%0ATITLE%3AData%20Analyst%2C%20Music%20Producer%0AEMAIL%3Amailto%3Adavemachario%40gmail.com%0AEMAIL%3Amailto%3Adave.machario%40sekologistics.com%0ATEL%3A%2B85293457707%0AURL%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fin%2Fdavemachario%2F%0AURL%3Ahttps%3A%2F%2Fwww.instagram.com%2Fislandproductions.id%0AURL%3Ahttps%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCInemueXqh0N622jrIGtmVQ%0AEND%3AVCARD" class="add-contact-button">
+            <i class="fas fa-user-plus"></i> Save Contact
           </a>
         </div>
         <p>
@@ -121,8 +73,6 @@
     </div>
   </div>
   
-  
-
   <footer>
     <p>&copy; 2023 Dave Machario. All rights reserved.</p>
   </footer>
