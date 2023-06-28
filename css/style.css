@@ -91,8 +91,17 @@ footer {
 
 .contact-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center; /* Center align the container horizontally */
+  align-items: center; /* Center align the container vertically */
+  height: auto; /* Adjust the height of the container */
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
 }
 
 .contact-header {
@@ -102,6 +111,8 @@ footer {
 
 .contact-header h2 {
   margin-right: 10px;
+  font-size: 28px;
+  vertical-align: middle;
 }
 
 .add-contact-button {
