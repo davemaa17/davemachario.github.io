@@ -113,3 +113,16 @@ body {
 .show-contact-button:hover {
   color: #ccc;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust the height as needed */
+  background-color: #252525;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+}
