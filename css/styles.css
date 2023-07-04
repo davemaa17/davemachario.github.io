@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   background-color: #252525;
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 
 .profile-container {
   text-align: center;
-  padding-top: 50px; /* Adjust the padding as needed */
+  padding-top: 50px;
 }
 
 .profile-image {
@@ -21,21 +25,22 @@ body {
   margin-top: 20px;
 }
 
-h1 {
+.name {
   font-size: 36px;
-  color: #fff;
+  color: #f4f4f4;
   margin-bottom: 10px;
 }
 
-h2 {
+.job-title {
   font-size: 24px;
-  color: #fff;
+  color: #f4f4f4;
   margin-bottom: 20px;
 }
 
 .social-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .social-link {
@@ -50,13 +55,12 @@ h2 {
 }
 
 .container {
-  text-align: center;
   margin: 0 auto;
-  max-width: 95%;
+  max-width: 80%;
 }
 
 .contact-item {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .contact-detail {
@@ -64,30 +68,48 @@ h2 {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  text-align: left;
 }
 
-.contact-detail h3 {
+.contact-heading {
   font-size: 24px;
   color: #000;
   margin-bottom: 5px;
 }
 
-.contact-detail p {
+.contact-info {
   font-size: 21px;
   color: #000;
+  margin-bottom: 10px;
 }
 
-.contact-actions {
-  margin-top: 20px;
-}
-
-#download-btn {
-  display: inline-block;
-  color: #fff;
+.contact-info a {
+  color: #000;
   text-decoration: none;
 }
 
-#download-btn:hover {
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-me-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-me-heading {
+  font-size: 24px;
+  color: #000;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.show-contact-button {
+  font-size: 48px;
+  color: #000;
+  text-decoration: none;
+}
+
+.show-contact-button:hover {
   color: #ccc;
 }
