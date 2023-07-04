@@ -1,22 +1,25 @@
-// JavaScript code to trigger contact card download
-document.getElementById('download-btn').addEventListener('click', function() {
-    var contactCardData = "BEGIN:VCARD\n" +
-                          "VERSION:3.0\n" +
-                          "N:Lastname;Firstname;;;\n" +
-                          "FN:Your Name\n" +
-                          "ORG:Your Company Name;\n" +
-                          "TEL;TYPE=CELL:YOUR_PHONE_NUMBER\n" +
-                          "EMAIL:YOUR_EMAIL_ADDRESS\n" +
-                          "URL;type=linkedin:https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE\n" +
-                          "URL;type=instagram:https://www.instagram.com/YOUR_INSTAGRAM_PROFILE\n" +
-                          "END:VCARD";
-  
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/vcard;charset=utf-8,' + encodeURIComponent(contactCardData));
-    element.setAttribute('download', 'contact.vcf');
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-  });
-  
+function showContact() {
+  var vCardContent = "BEGIN:VCARD\r\n" +
+                     "VERSION:3.0\r\n" +
+                     "N:Machario;Dave\r\n" +
+                     "FN:Dave Machario\r\n" +
+                     "ORG:SEKO Logistics\r\n" +
+                     "TITLE:Data Analyst\r\n" +
+                     "TEL;TYPE=CELL:(+852) 9345-7707\r\n" +
+                     "EMAIL;TYPE=WORK,INTERNET:dave.machario@sekologistics.com\r\n" +
+                     "EMAIL;TYPE=HOME,INTERNET:davemachario@gmail.com\r\n" +
+                     "URL;TYPE=LINKEDIN:https://www.linkedin.com/in/davemachario\r\n" +
+                     "URL;TYPE=INSTAGRAM:https://www.instagram.com/islandproductions.id\r\n" +
+                     "URL;TYPE=YOUTUBE:https://www.youtube.com/@island_productions\r\n" +
+                     "END:VCARD";
+
+  var vCardBlob = new Blob([vCardContent], { type: "text/vcard" });
+  var vCardURL = URL.createObjectURL(vCardBlob);
+
+  var newWindow = window.open(vCardURL, '_blank');
+  if (newWindow) {
+    newWindow.focus();
+  } else {
+    alert("Please allow pop-ups to show the vCard.");
+  }
+}
