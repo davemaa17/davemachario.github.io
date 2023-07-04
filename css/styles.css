@@ -126,3 +126,10 @@ footer {
 footer p {
   margin: 0;
 }
+
+@media (max-width: 767px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
