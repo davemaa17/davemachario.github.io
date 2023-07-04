@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #252525;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-container {
+  text-align: center;
+  padding-top: 50px; /* Adjust the padding as needed */
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.name-job-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 36px;
+  margin: 0 10px;
+}
+
+.social-link:hover {
+  color: #0056b3;
+}
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+}
+
+.contact-detail {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.contact-detail h3 {
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.contact-detail p {
+  font-size: 21px;
+  color: #000;
+}
+
+.contact-actions {
+  margin-top: 20px;
+}
+
+#download-btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+#download-btn:hover {
+  color: #ccc;
+}
