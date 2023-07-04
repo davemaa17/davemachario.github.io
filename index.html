@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Your Business Card Landing Page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Dave Machario</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="profile-container">
@@ -11,39 +11,36 @@
   </div>
 
   <div class="name-job-container">
-    <h1>Dave Machario</h1>
-    <h2>Data Analyst, Freelance Music Producer</h2>
+    <h1 class="name">Dave Machario</h1>
+    <h2 class="job-title">Data Analyst, Freelance Music Producer</h2>
 
     <div class="social-container">
-      <a href="https://www.linkedin.com/in/davemachario" target="_blank" class="social-link"><i class="fab fa-linkedin fa-lg"></i></a>
-      <a href="https://www.instagram.com/islandproductions.id" target="_blank" class="social-link"><i class="fab fa-instagram fa-lg"></i></a>
-      <a href="https://www.youtube.com/@island_productions" target="_blank" class="social-link"><i class="fab fa-youtube fa-lg"></i></a>
+      <a href="https://www.linkedin.com/in/davemachario" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/islandproductions.id" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@island_productions" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
     </div>
   </div>
 
   <div class="container">
-    <h2>Contact Me</h2>
     <div class="contact-item">
       <div class="contact-detail">
-        <h3>Phone</h3>
-        <p>(+852) 9345-7707</p>
+        <div class="contact-me-container">
+          <h3 class="contact-me-heading">Contact Me</h3>
+          <a href="#" id="show-contact-btn" onclick="showContact()" class="show-contact-button"><i class="fas fa-address-card"></i></a>
+        </div>
       </div>
-    </div>
-    <div class="contact-item">
       <div class="contact-detail">
-        <h3>Company Email</h3>
-        <p>dave.machario@sekologistics.com</p>
+        <h3 class="contact-heading">Phone</h3>
+        <p class="contact-info"><a href="tel:+85293457707">(+852) 9345-7707</a></p>
       </div>
-    </div>
-    <div class="contact-item">
       <div class="contact-detail">
-        <h3>Personal Email</h3>
-        <p>davemachario@gmail.com</p>
+        <h3 class="contact-heading">Company Email</h3>
+        <p class="contact-info"><a href="mailto:dave.machario@sekologistics.com">dave.machario@sekologistics.com</a></p>
       </div>
-    </div>
-
-    <div class="contact-actions">
-      <a href="#" id="download-btn"><i class="fas fa-download fa-3x"></i></a>
+      <div class="contact-detail">
+        <h3 class="contact-heading">Personal Email</h3>
+        <p class="contact-info"><a href="mailto:davemachario@gmail.com">davemachario@gmail.com</a></p>
+      </div>
     </div>
   </div>
 
