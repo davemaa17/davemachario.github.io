@@ -1,82 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dave Machario - Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="js/save_contact.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="js/main.js"></script>
+  <title>Your Business Card Landing Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="profile-image">
-      <img src="https://media.licdn.com/dms/image/D5603AQGrQUjgUb5NOQ/profile-displayphoto-shrink_800_800/0/1665830566337?e=1693440000&v=beta&t=NJGLa8hIN0l8EWe5gW_Ci7iR6vFbpIe4KF_4Gi1V57I" alt="Profile Picture">
-    </div>
+  <div class="profile-container">
+    <img src="https://media.licdn.com/dms/image/D5603AQGrQUjgUb5NOQ/profile-displayphoto-shrink_200_200/0/1665830566337?e=1694044800&v=beta&t=vY3McQODIryODSLeKkxRNFWM8nGvC4uPp2iMXXteGEw" alt="Profile Picture" class="profile-image">
+  </div>
+
+  <div class="name-job-container">
     <h1>Dave Machario</h1>
-    <h2>Data Analyst, Music Producer</h2>
-    <h3>SEKO Logistics, Island Productions</h3>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/davemachario/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-      <a href="https://www.instagram.com/islandproductions.id" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-      <a href="https://www.youtube.com/channel/UCInemueXqh0N622jrIGtmVQ" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-      <a href="https://wa.me/85293457707" target="_blank" class="social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
-    </div>
-  </header>
+    <h2>Data Analyst, Freelance Music Producer</h2>
 
-  <main>
-    <div class="container">
-      <section id="about">
-        <h2>About Me</h2>
-        <p>As a data analyst specializing in ecommerce logistics, I optimize operations and drive business growth through data-driven strategies. Proficient in Tableau and Python, I deliver valuable insights for informed decision-making.</p>
-        <p>Passionate about music, I'm a music producer and audio engineer with a focus on funk, jazz, and R&B. Through Island Productions, I create unique covers of popular songs, infusing them with fresh arrangements and a distinct musical perspective.</p>
-        <p>Visit the Island Productions Instagram for captivating reimagined covers blending various musical genres. Let's collaborate on innovative data analysis solutions or exciting music projects in funk, jazz, and R&B. Together, we can achieve remarkable results.</p>
-      </section>
-    </div>
-
-    <div class="container">
-      <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <h3 id="video-title">Loading latest video...</h3>
-            <div class="video-wrapper">
-              <iframe id="latest-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </li>
-          <li>
-            <h3 id="most-viewed-video-title">Loading most viewed video...</h3>
-            <div class="video-wrapper">
-              <iframe id="most-viewed-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </div>
-  </main>
-
-  <div class="contact-container">
-    <div class="container">
-      <section id="contact">
-        <div class="contact-header">
-          <h2>Contact Me</h2>
-          <a href="data:text/vcard;charset=utf-8,%EF%BB%BFBEGIN%3AVCARD%0AVERSION%3A4.0%0AN%3AMachario%3BDave%0AFN%3ADave%20Machario%0AORG%3ASEKO%20Logistics%0ATITLE%3AData%20Analyst%2C%20Music%20Producer%0AEMAIL%3Amailto%3Adavemachario%40gmail.com%0AEMAIL%3Amailto%3Adave.machario%40sekologistics.com%0ATEL%3A%2B85293457707%0AURL%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fin%2Fdavemachario%2F%0AURL%3Ahttps%3A%2F%2Fwww.instagram.com%2Fislandproductions.id%0AURL%3Ahttps%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCInemueXqh0N622jrIGtmVQ%0AEND%3AVCARD" class="add-contact-button">
-            <i class="fas fa-user-plus"></i> Save Contact
-          </a>
-        </div>
-        <p>
-          Email: <a href="mailto:davemachario@gmail.com">davemachario@gmail.com</a><br>
-          Company Email: <a href="mailto:dave.machario@sekologistics.com">dave.machario@sekologistics.com</a><br>
-          Phone: <a href="tel:+85293457707">(+852) 9345-7707</a>
-        </p>
-      </section>
+    <div class="social-container">
+      <a href="https://www.linkedin.com/in/davemachario" target="_blank" class="social-link"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a href="https://www.instagram.com/islandproductions.id" target="_blank" class="social-link"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://www.youtube.com/@island_productions" target="_blank" class="social-link"><i class="fab fa-youtube fa-lg"></i></a>
     </div>
   </div>
-  
-  <footer>
-    <p>&copy; 2023 Dave Machario. All rights reserved.</p>
-  </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="contact-item">
+      <div class="contact-detail">
+        <h3>Phone</h3>
+        <p>(+852) 9345-7707</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-detail">
+        <h3>Company Email</h3>
+        <p>dave.machario@sekologistics.com</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-detail">
+        <h3>Personal Email</h3>
+        <p>davemachario@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="contact-actions">
+      <a href="#" id="download-btn"><i class="fas fa-download fa-3x"></i></a>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
