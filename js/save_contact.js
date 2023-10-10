@@ -3,11 +3,11 @@ function saveContact() {
     "VERSION:3.0\n" +
     "N:Machario;Dave\n" +
     "FN:Dave Machario\n" +
-    "ORG:SEKO Logistics\n" +
-    "TITLE:Data Analyst, Music Producer\n" +
-    "TEL;TYPE=CELL:(+852) 9345-7707\n" +
+    "ORG:Kroma Works\n" +
+    "TITLE:Data Analyst, Freelance Music Producer\n" +
+    "TEL;TYPE=CELL:(+852) 5422-5672\n" +
     "EMAIL:davemachario@gmail.com\n" +
-    "EMAIL;TYPE=WORK:dave.machario@sekologistics.com\n" +
+    "EMAIL;TYPE=WORK:business@kroma.works\n" +
     "END:VCARD";
 
   var encodedData = encodeURIComponent(vcardData);
