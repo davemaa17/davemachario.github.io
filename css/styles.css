@@ -9,9 +9,28 @@ body {
   color: #fff;
 }
 
+.header {
+  position: relative;
+  text-align: left;
+  padding: 10px;
+}
+
+.logo-link {
+  display: block;
+  width: 100px; /* Adjust the width as needed */
+  margin: 0 auto;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+
 .profile-container {
   text-align: center;
   padding-top: 50px;
+  z-index: 1;
 }
 
 .profile-image {
