@@ -3,13 +3,13 @@ function showContact() {
                      "VERSION:3.0\r\n" +
                      "N:Machario;Dave\r\n" +
                      "FN:Dave Machario\r\n" +
-                     "ORG:SEKO Logistics\r\n" +
-                     "TITLE:Data Analyst\r\n" +
-                     "TEL;TYPE=CELL:(+852) 9345-7707\r\n" +
-                     "EMAIL;TYPE=WORK,INTERNET:dave.machario@sekologistics.com\r\n" +
+                     "ORG:Kroma Works\r\n" +
+                     "TITLE:Data Analyst, Freelance Music Producer\r\n" +
+                     "TEL;TYPE=CELL:(+852) 5422-5672\r\n" +
+                     "EMAIL;TYPE=WORK,INTERNET:business@kroma.works\r\n" +
                      "EMAIL;TYPE=HOME,INTERNET:davemachario@gmail.com\r\n" +
                      "URL;TYPE=LINKEDIN:https://www.linkedin.com/in/davemachario\r\n" +
-                     "URL;TYPE=INSTAGRAM:https://www.instagram.com/islandproductions.id\r\n" +
+                     "URL;TYPE=INSTAGRAM:https://www.instagram.com/kroma.works\r\n" +
                      "URL;TYPE=YOUTUBE:https://www.youtube.com/@island_productions\r\n" +
                      "END:VCARD";
 
