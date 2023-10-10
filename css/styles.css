@@ -1,54 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
-/* body {
-  font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(to bottom, #5F7CE4, #C23B65, #252525);
-  margin: 0;
-  padding: 0;
-  color: #fff;
-} */
-
 body {
   font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(135deg, #5F7CE4, #C23B65, #252525);
+  background: linear-gradient(to bottom, #252525, #5F7CE4, #C23B65, #252525);
   margin: 0;
   padding: 0;
   color: #fff;
   min-height: 100vh; /* Ensure the gradient covers the entire viewport height */
 }
 
-
+/* Your existing CSS styles */
 
 .header {
   position: relative;
-  text-align: left;
+  text-align: center;
   padding: 10px;
 }
 
-.logo-link {
-  display: block;
-  width: 100px; /* Adjust the width as needed */
-  margin: 0 auto;
-}
-
-.logo {
-  width: 100%;
-  height: auto;
-}
-
-
-.profile-container {
-  text-align: center;
-  padding-top: 50px;
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   z-index: 1;
 }
 
-.profile-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.logo {
+  width: 200px; /* Adjust the width as needed */
 }
+
+.profile-image-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 50px; /* Adjust the top margin as needed */
+}
+
+.profile-image {
+  width: 800px; /* Adjust the size as needed */
+  height: 800px; /* Adjust the size as needed */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center precisely */
+}
+
 
 .name-job-container {
   text-align: center;
@@ -74,14 +70,14 @@ body {
 }
 
 .social-link {
-  color: #007bff;
+  color: #f4f4f9;
   text-decoration: none;
   font-size: 36px;
   margin: 0 10px;
 }
 
 .social-link:hover {
-  color: #0056b3;
+  color: #f4f4f9;
 }
 
 .container {
