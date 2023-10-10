@@ -9,12 +9,12 @@ body {
   color: #fff;
 }
 
-.profile-image {
+.profile-container {
   text-align: center;
   padding-top: 50px;
 }
 
-.profile-container {
+.profile-image {
   width: 200px;
   height: 200px;
   border-radius: 50%;
