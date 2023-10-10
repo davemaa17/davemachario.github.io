@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(to bottom, #5F7CE4, #C23B65, #0A090B);
+  background: linear-gradient(to bottom, #5F7CE4, #C23B65, #252525);
   margin: 0;
   padding: 0;
   color: #fff;
@@ -149,13 +149,19 @@ body {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px; /* Adjust the height as needed */
   background-color: #252525;
   color: #fff;
+  z-index: 2; /* Ensure the footer is in front of other content */
 }
+
 
 footer p {
   margin: 0;
