@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
-body {
+/* body {
   font-family: 'Poppins', Arial, sans-serif;
   background: linear-gradient(to bottom, #5F7CE4, #C23B65, #252525);
   margin: 0;
   padding: 0;
   color: #fff;
+} */
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #5F7CE4, #C23B65, #252525);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  min-height: 100vh; /* Ensure the gradient covers the entire viewport height */
 }
+
 
 
 .header {
